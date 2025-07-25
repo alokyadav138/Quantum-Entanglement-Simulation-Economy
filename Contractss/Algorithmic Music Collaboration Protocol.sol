@@ -36,4 +36,9 @@ contract AlgorithmicMusicCollab {
         require(trackId < tracks.length, "Invalid track ID");
         emit FeedbackProvided(trackId, feedback);
     }
+
+    // 🔥 New Function: Get all track IDs uploaded by a user
+    function getUserTracks(address user) external view returns (uint256[] memory) {
+        return userTracks[user];
+    }
 }
